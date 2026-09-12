@@ -1,5 +1,10 @@
 # 额外圆形月岛 Extra Circular Lunar Island
 
+[h2]v2.0更新注意事项[/h2]
+[h3]本次更新将每种自然资源设定从最大数量改为密度，请按重置按钮将数值重置回预设！[/h3]
+[spoiler]不重置不会有bug，只会导致生成太多自然资源，岛屿看起来很雜亂，我不喜歡[/spoiler]
+
+[h2]模組介紹[/h2]
 本MOD灵感来源于此地图种子码：[url=https://www.bilibili.com/video/BV1WF4m1L7rX/]炸裂！总分5.5！非模板建家长期档玩家表示从没见过这么圆的月岛！[/url]，因为想在[url=https://steamcommunity.com/sharedfiles/filedetails/?id=1392778117]棱镜[/url]等模组地图也能玩到圆形月岛，故有此模组之诞生
 
 想要在月岛建家，但觉得原版月岛形状不好看吗？本模组允许你在世界中额外生成 1 到 3 座自定义的月岛，且不影响原版月岛的生成！非常适合作为建家基地，薇克巴顿的最爱，完全是奶奶快乐岛
@@ -31,6 +36,11 @@
 
 # Extra Circular Lunar Island 额外圆形月岛
 
+[h2]v2.0 Update Notes[/h2]
+[h3]This update changes the setting for each natural resource from maximum quantity to density. Please press the Reset button to reset the values back to the default![/h3]
+[spoiler]Not resetting won't cause bugs, but it will result in too many natural resources being generated, making the island look messy. I don't like it.[/spoiler]
+
+[h2]Introduction[/h2]
 This mod is inspired by the map seed showcased in this video: [url=https://www.bilibili.com/video/BV1WF4m1L7rX/]Mind-blowing! Score 5.5! Veteran base-building players have never seen a Lunar Island this circular![/url] Since I wanted to play on a circular Lunar Island even on modded maps like [url=https://steamcommunity.com/sharedfiles/filedetails/?id=1392778117]Legion[/url], this mod was born.
 
 Want to build a base on the Lunar Island, but find the original shape unappealing? This mod allows you to generate 1 to 3 extra custom Lunar Islands in your world without affecting the generation of the original one! Perfect for base building, Wickerbottom's absolute favorite, truly a Grandma's happy island.
@@ -40,7 +50,7 @@ Want to build a base on the Lunar Island, but find the original shape unappealin
 [*] Shape & Size: Supports both "Circular" and "Square" shapes, with 19x19 and 33x33 tile size options. You can optionally replace the outer 2 rings with Shell Beach turf.
 [*] Center Customization: Keep the center as solid ground (great for placing an Ice Crystaleyezer) or hollow it out into a lake ranging from 1x1 up to 5x5.
 [*] Specific Center Entities: Instantly spawn a specific entity right in the middle of the island. Options include: Hot Spring, Oasis Lake, Native Knobbly Tree (Great Tree Trunk), or Transplanted Knobbly Tree (Above-Average Tree Trunk).
-[*] Mossy Vine Configuration: If you choose to spawn a Knobbly Tree in the center, you can customize the amount and position (Cross or Square patterns) and distance of extra Mossy Vines to effortlessly create the perfect shelter shade for your sea base.
+[*] Mossy Vine Configuration: If you choose to spawn a Knobbly Tree in the center, you can customize the amount and position (Cross or Square patterns) and distance of extra Mossy Vines to effortlessly create the perfect canopy shade for your sea base.
 [*] Natural Resource Generation: Fully customize the amount of natural resources spawned on your extra islands. Supported objects include: Starfish, Bull Kelp Roots, Sea Bones, Driftwood, Lune Trees, Saplings, Stone Fruit Bushes, Moonglass Rocks, and Moon Rocks.
 [/list]
 
