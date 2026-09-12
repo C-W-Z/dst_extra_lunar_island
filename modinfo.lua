@@ -45,7 +45,7 @@ local LANGS = {
                 { "温泉", "hotspring", "建议禁用中心水域" },
                 { "绿洲湖泊", "oasislake", "建议禁用中心水域。不影响沙漠绿洲" },
                 { "原生的水中木", "watertree_pillar", "大树干" },
-                { "移植的水中木", "oceantree_pillar", "高出平均值的树干" },
+                { "移植的水中木", "oceantree_pillar", "高出平均值的树干（自带苔癣藤条）" },
             } },
             { modid .. '_oceanvine', '水中木无花果藤条位置', '若在"中心实体"中选择"移植水中木"，其本身会自动生成3条，加上此设定会有7条', false, {
                 { "禁用", false, "无额外苔癣藤条" },
@@ -134,7 +134,7 @@ local LANGS = {
                 { "Hot Spring",                "hotspring",        "Recommended to disable Center Water" },
                 { "Oasis Lake",                "oasislake",        "Recommended to disable Center Water. Doesn't affect Desert Oasis Lake" },
                 { "Native Knobbly Tree",       "watertree_pillar", "Great Tree Trunk" },
-                { "Transplanted Knobbly Tree", "oceantree_pillar", "Above-Average Tree Trunk" },
+                { "Transplanted Knobbly Tree", "oceantree_pillar", "Above-Average Tree Trunk (with its own mossy vines)" },
             } },
             { modid .. '_oceanvine', 'Mossy Vine Position',
                 'The "Above-Average Tree Trunk" spawns 3 vines automatically. This setting adds up to 7 vines.', false, {
