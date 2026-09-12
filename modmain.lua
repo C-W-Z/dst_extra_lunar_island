@@ -6,6 +6,8 @@ local modid = 'extra_circle_lunar' -- 定义唯一modid
 -- 导入常量表
 modimport('scripts/' .. modid .. '/tuning.lua')
 
+TUNING.EXTRA_CIRCLE_LUNAR.NUM = GetModConfigData(modid .. '_num')
+TUNING.EXTRA_CIRCLE_LUNAR.SHAPE = GetModConfigData(modid .. '_shape')
 TUNING.EXTRA_CIRCLE_LUNAR.SIZE = GetModConfigData(modid .. '_size')
 TUNING.EXTRA_CIRCLE_LUNAR.CENTER_WATER = GetModConfigData(modid .. '_center_water')
 TUNING.EXTRA_CIRCLE_LUNAR.CENTER_ENTITY = GetModConfigData(modid .. '_center_entity')
