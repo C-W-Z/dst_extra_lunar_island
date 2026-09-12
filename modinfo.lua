@@ -97,14 +97,92 @@ local LANGS = {
     },
     ['en'] = {
         name = "Extra Circular Lunar Island",
-        description = 'For details, please see the mod settings.',
+        description =
+        'For detailed features, please check the mod settings.\n\nGenerates one or more extra circular/square Lunar Islands without affecting the original one. Perfect for a base (Wickerbottom\'s favorite).',
         config = {
             -- { 'LANGUAGE' },
-            -- { modid .. '_lang', 'language', 'choose language', 'en', {
+            -- { modid .. '_lang', 'Language', 'Choose language', 'en', {
             --     { '简体中文', 'cn' },
             --     { 'English', 'en' }
             -- } },
             -- { 'FUNCTIONS' },
+            { modid .. '_num', 'Amount', 'How many extra Lunar Islands to generate', 1, {
+                { "1", 1, "Generate 1 extra Lunar Island" },
+                { "2", 2, "Generate 2 extra Lunar Islands" },
+                { "3", 3, "Generate 3 extra Lunar Islands" },
+            } },
+            { modid .. '_shape', 'Shape', '', 'circle', {
+                { "Circle", 'circle', "Generate a circular Lunar Island" },
+                { "Square", 'square', "Generate a square Lunar Island" },
+            } },
+            { modid .. '_size', 'Size', 'Unit is tile', 19, {
+                { "19x19", 19 },
+                { "33x33", 33 },
+            } },
+            { modid .. '_beach', 'Outer Beach', 'Replace the outer 2 rings with Shell Beach Turf', true, {
+                { "Disabled", false },
+                { "Enabled",  true },
+            } },
+            { modid .. '_center_water', 'Center Water', 'Hollow out the center into a lake', false, {
+                { "Disabled", false, "Solid ground, can place Ice Crystaleyezer or Lightning Rod" },
+                { "1x1",      0,     "1x1 water, can fish?" },
+                { "3x3",      1,     "3x3 water, can plant Knobbly Trees" },
+                { "5x5",      2,     "5x5 water, can plant Knobbly Trees" },
+            } },
+            { modid .. '_center_entity', 'Center Entity', 'Spawn an entity in the center', false, {
+                { "Disabled",                  false },
+                { "Hot Spring",                "hotspring",        "Recommended to disable Center Water" },
+                { "Oasis Lake",                "oasislake",        "Recommended to disable Center Water. Doesn't affect Desert Oasis Lake" },
+                { "Native Knobbly Tree",       "watertree_pillar", "Great Tree Trunk" },
+                { "Transplanted Knobbly Tree", "oceantree_pillar", "Above-Average Tree Trunk" },
+            } },
+            { modid .. '_oceanvine', 'Mossy Vine Position',
+                'The "Above-Average Tree Trunk" spawns 3 vines automatically. This setting adds up to 7 vines.', false, {
+                { "Disabled",                  false,   "No extra Mossy Vines" },
+                { "Cross (1 on each side)",    "cross" },
+                { "Square (1 on each corner)", "square" },
+            } },
+            { modid .. '_oceanvine_distance', 'Mossy Vine Distance', 'Requires "Mossy Vine Position" to be enabled', 2, {
+                { "1",   1,   "1 tile away from the center" },
+                { "1.5", 1.5, "1.5 tiles away from the center" },
+                { "2",   2,   "2 tiles away from the center" },
+                { "2.5", 2.5, "2.5 tiles away from the center" },
+                { "3",   3,   "3 tiles away from the center" },
+                { "3.5", 3.5, "3.5 tiles away from the center" },
+                { "4",   4,   "4 tiles away from the center" },
+                { "4.5", 4.5, "4.5 tiles away from the center" },
+                { "5",   5,   "Corners will exceed the shelter, recommended to use with shelter expanding mods" },
+                { "5.5", 5.5, "Corners will exceed the shelter, recommended to use with shelter expanding mods" },
+                { "6",   6,   "Corners will exceed the shelter, recommended to use with shelter expanding mods" },
+            } },
+            { "Natural Generation" },
+            { modid .. '_starfish', 'Starfish Count', 'Max Starfish spawned per extra island', 0, {
+                { "Disabled", 0 }, { "5", 5 }, { "10", 10 }, { "15", 15 }, { "20", 20 }, { "25", 25 }, { "30", 30 }, { "40", 40 }, { "50", 50 }, { "75", 75 }, { "100", 100 },
+            } },
+            { modid .. '_kelp', 'Bull Kelp Root Count', 'Max Bull Kelp Roots spawned per extra island', 0, {
+                { "Disabled", 0 }, { "5", 5 }, { "10", 10 }, { "15", 15 }, { "20", 20 }, { "25", 25 }, { "30", 30 },
+            } },
+            { modid .. '_bones', 'Sea Bones Count', 'Max Sea Bones spawned per extra island', 0, {
+                { "Disabled", 0 }, { "5", 5 }, { "10", 10 }, { "15", 15 }, { "20", 20 }, { "25", 25 }, { "30", 30 },
+            } },
+            { modid .. '_driftwood', 'Driftwood Count', 'Max Driftwood spawned per extra island', 0, {
+                { "Disabled", 0 }, { "5", 5 }, { "10", 10 }, { "15", 15 }, { "20", 20 }, { "25", 25 }, { "30", 30 },
+            } },
+            { modid .. '_lunatree', 'Lune Tree Count', 'Max Lune Trees spawned per extra island', 0, {
+                { "Disabled", 0 }, { "5", 5 }, { "10", 10 }, { "15", 15 }, { "20", 20 }, { "25", 25 }, { "30", 30 },
+            } },
+            { modid .. '_sapling', 'Sapling Count', 'Max Saplings spawned per extra island', 0, {
+                { "Disabled", 0 }, { "5", 5 }, { "10", 10 }, { "15", 15 }, { "20", 20 }, { "25", 25 }, { "30", 30 },
+            } },
+            { modid .. '_stonefruit', 'Stone Fruit Bush Count', 'Max Stone Fruit Bushes spawned per extra island', 0, {
+                { "Disabled", 0 }, { "5", 5 }, { "10", 10 }, { "15", 15 }, { "20", 20 }, { "25", 25 }, { "30", 30 },
+            } },
+            { modid .. '_moonglass', 'Moonglass Rock Count', 'Max Moonglass Rocks spawned per extra island', 0, {
+                { "Disabled", 0 }, { "5", 5 }, { "10", 10 }, { "15", 15 }, { "20", 20 }, { "25", 25 }, { "30", 30 },
+            } },
+            { modid .. '_moonrock', 'Moon Rock Count', 'Max Moon Rocks spawned per extra island', 0, {
+                { "Disabled", 0 }, { "5", 5 }, { "10", 10 }, { "15", 15 }, { "20", 20 }, { "25", 25 }, { "30", 30 },
+            } },
         }
     }
 }
