@@ -14,6 +14,7 @@ TUNING.EXTRA_CIRCLE_LUNAR.CENTER_WATER = GetModConfigData(modid .. '_center_wate
 TUNING.EXTRA_CIRCLE_LUNAR.CENTER_ENTITY = GetModConfigData(modid .. '_center_entity')
 TUNING.EXTRA_CIRCLE_LUNAR.OCEANVINE = GetModConfigData(modid .. '_oceanvine')
 TUNING.EXTRA_CIRCLE_LUNAR.OCEANVINE_DISTANCE = GetModConfigData(modid .. '_oceanvine_distance')
+TUNING.EXTRA_CIRCLE_LUNAR.CLEAR_SPACE = GetModConfigData(modid .. '_clear_space')
 TUNING.EXTRA_CIRCLE_LUNAR.STARFISH = GetModConfigData(modid .. '_starfish')
 TUNING.EXTRA_CIRCLE_LUNAR.KELP = GetModConfigData(modid .. '_kelp')
 TUNING.EXTRA_CIRCLE_LUNAR.BONES = GetModConfigData(modid .. '_bones')

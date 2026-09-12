@@ -3,49 +3,7 @@
 local function generate_objects(tx, ty)
     local radius = math.floor(TUNING.EXTRA_CIRCLE_LUNAR.SIZE / 2)
 
-    -- 1. 建立所有待生物件的陣列 (單一池)
-    local spawn_pool = {}
-    local function AddToPool(prefab, count)
-        if count and count > 0 then
-            for i = 1, count do table.insert(spawn_pool, prefab) end
-        end
-    end
-
-    AddToPool("trap_starfish", TUNING.EXTRA_CIRCLE_LUNAR.STARFISH)
-    AddToPool("bullkelp_beachedroot", TUNING.EXTRA_CIRCLE_LUNAR.KELP)
-    AddToPool("dead_sea_bones", TUNING.EXTRA_CIRCLE_LUNAR.BONES)
-
-    local driftwood_count = TUNING.EXTRA_CIRCLE_LUNAR.DRIFTWOOD
-    if driftwood_count and driftwood_count > 0 then
-        local wood_types = { "driftwood_small1", "driftwood_small2", "driftwood_tall" }
-        for i = 1, driftwood_count do
-            table.insert(spawn_pool, wood_types[math.random(#wood_types)])
-        end
-    end
-
-    local lunatree_count = TUNING.EXTRA_CIRCLE_LUNAR.LUNATREE
-    if lunatree_count and lunatree_count > 0 then
-        local tree_types = { "moon_tree_short", "moon_tree_normal", "moon_tree_tall" }
-        for i = 1, lunatree_count do
-            table.insert(spawn_pool, tree_types[math.random(#tree_types)])
-        end
-    end
-
-    AddToPool("sapling_moon", TUNING.EXTRA_CIRCLE_LUNAR.SAPLING)
-    AddToPool("rock_avocado_bush", TUNING.EXTRA_CIRCLE_LUNAR.STONEFRUIT)
-    AddToPool("moonglass_rock", TUNING.EXTRA_CIRCLE_LUNAR.MOONGLASS)
-    AddToPool("rock_moon", TUNING.EXTRA_CIRCLE_LUNAR.MOONROCK)
-    AddToPool("rock2", TUNING.EXTRA_CIRCLE_LUNAR.GOLDROCK)
-    AddToPool("rock1", TUNING.EXTRA_CIRCLE_LUNAR.ROCK)
-    AddToPool("cavein_boulder", TUNING.EXTRA_CIRCLE_LUNAR.CAVEROCK)
-
-    -- 2. 隨機打亂池子順序 (洗牌演算法)，確保各物件擁有平等的抽取機率
-    for i = #spawn_pool, 2, -1 do
-        local j = math.random(i)
-        spawn_pool[i], spawn_pool[j] = spawn_pool[j], spawn_pool[i]
-    end
-
-    -- 3. 建立基礎可用地皮清單 (初始包含所有距離大於 3 的月島與沙灘地皮)
+    -- 先掃描建立基礎可用地皮清單
     local available_tiles = {}
     for dx = -radius, radius do
         for dy = -radius, radius do
@@ -58,8 +16,68 @@ local function generate_objects(tx, ty)
         end
     end
 
-    -- 4. 依序抽出打亂後的物件，尋找合適的地皮
+    local total_usable_tiles = #available_tiles
+    if total_usable_tiles == 0 then return end
+
+    -- 計算強制空地保護機制 (限制最大生成數量)
+    local clear_space_pct = TUNING.EXTRA_CIRCLE_LUNAR.CLEAR_SPACE or 20
+    local max_spawn_limit = math.floor(total_usable_tiles * (1 - clear_space_pct / 100))
+    local spawned_count = 0
+
+    -- 建立所有待生成物件的陣列 (依照百分比計算數量)
+    local spawn_pool = {}
+
+    local function AddToPool(prefab, percentage)
+        if percentage and percentage > 0 then
+            -- 總地皮數 × (設定百分比 / 100) = 實際生成數量
+            local count = math.floor(total_usable_tiles * (percentage / 100))
+            for i = 1, count do table.insert(spawn_pool, prefab) end
+        end
+    end
+
+    AddToPool("trap_starfish", TUNING.EXTRA_CIRCLE_LUNAR.STARFISH)
+    AddToPool("bullkelp_beachedroot", TUNING.EXTRA_CIRCLE_LUNAR.KELP)
+    AddToPool("dead_sea_bones", TUNING.EXTRA_CIRCLE_LUNAR.BONES)
+
+    local driftwood_pct = TUNING.EXTRA_CIRCLE_LUNAR.DRIFTWOOD
+    if driftwood_pct and driftwood_pct > 0 then
+        local count = math.floor(total_usable_tiles * (driftwood_pct / 100))
+        local wood_types = { "driftwood_small1", "driftwood_small2", "driftwood_tall" }
+        for i = 1, count do
+            table.insert(spawn_pool, wood_types[math.random(#wood_types)])
+        end
+    end
+
+    local lunatree_pct = TUNING.EXTRA_CIRCLE_LUNAR.LUNATREE
+    if lunatree_pct and lunatree_pct > 0 then
+        local count = math.floor(total_usable_tiles * (lunatree_pct / 100))
+        local tree_types = { "moon_tree_short", "moon_tree_normal", "moon_tree_tall" }
+        for i = 1, count do
+            table.insert(spawn_pool, tree_types[math.random(#tree_types)])
+        end
+    end
+
+    AddToPool("sapling_moon", TUNING.EXTRA_CIRCLE_LUNAR.SAPLING)
+    AddToPool("rock_avocado_bush", TUNING.EXTRA_CIRCLE_LUNAR.STONEFRUIT)
+    AddToPool("moonglass_rock", TUNING.EXTRA_CIRCLE_LUNAR.MOONGLASS)
+    AddToPool("rock_moon", TUNING.EXTRA_CIRCLE_LUNAR.MOONROCK)
+    AddToPool("rock2", TUNING.EXTRA_CIRCLE_LUNAR.GOLDROCK)
+    AddToPool("rock1", TUNING.EXTRA_CIRCLE_LUNAR.ROCK)
+    AddToPool("cavein_boulder", TUNING.EXTRA_CIRCLE_LUNAR.CAVEROCK)
+
+    -- 隨機打亂池子順序 (洗牌演算法)，確保各物件擁有平等的抽取機率
+    for i = #spawn_pool, 2, -1 do
+        local j = math.random(i)
+        spawn_pool[i], spawn_pool[j] = spawn_pool[j], spawn_pool[i]
+    end
+
+    -- 盲抽放置
     for _, prefab in ipairs(spawn_pool) do
+        -- 安全煞車：當生成的數量達到容許的最大上限時，直接停止，強制保留剩餘空地
+        if spawned_count >= max_spawn_limit then
+            break
+        end
+
         -- 判斷該物件是否為海岸物件
         local is_coast = (prefab == "trap_starfish" or prefab == "bullkelp_beachedroot" or prefab == "dead_sea_bones" or string.match(prefab, "driftwood"))
 
@@ -92,6 +110,7 @@ local function generate_objects(tx, ty)
             local entity = SpawnPrefab(prefab)
             if entity ~= nil then
                 entity.Transform:SetPosition(spawn_x + offset_x, 0, spawn_z + offset_z)
+                spawned_count = spawned_count + 1
             end
 
             -- 放置完成後，將這塊地皮從基礎可用清單中永久移除，保證絕對不會重疊
