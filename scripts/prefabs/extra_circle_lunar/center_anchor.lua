@@ -17,12 +17,22 @@ local function generate_objects(tx, ty)
 
     local driftwood_count = TUNING.EXTRA_CIRCLE_LUNAR.DRIFTWOOD
     if driftwood_count and driftwood_count > 0 then
-        local wood_types = { "driftwood_tall", "driftwood_small1", "driftwood_small2" }
+        local wood_types = { "driftwood_small1", "driftwood_small2", "driftwood_tall" }
         for i = 1, driftwood_count do
             table.insert(spawn_pool, wood_types[math.random(#wood_types)])
         end
     end
 
+    local lunatree_count = TUNING.EXTRA_CIRCLE_LUNAR.LUNATREE
+    if lunatree_count and lunatree_count > 0 then
+        local tree_types = { "moon_tree_short", "moon_tree_normal", "moon_tree_tall" }
+        for i = 1, lunatree_count do
+            table.insert(spawn_pool, tree_types[math.random(#tree_types)])
+        end
+    end
+
+    AddToPool("sapling_moon", TUNING.EXTRA_CIRCLE_LUNAR.SAPLING)
+    AddToPool("rock_avocado_bush", TUNING.EXTRA_CIRCLE_LUNAR.STONEFRUIT)
     AddToPool("moonglass_rock", TUNING.EXTRA_CIRCLE_LUNAR.MOONGLASS)
     AddToPool("rock_moon", TUNING.EXTRA_CIRCLE_LUNAR.MOONROCK)
 
@@ -36,7 +46,7 @@ local function generate_objects(tx, ty)
     local available_tiles = {}
     for dx = -radius, radius do
         for dy = -radius, radius do
-            if math.abs(dx) > 3 or math.abs(dy) > 3 then
+            if math.abs(dx) >= 3 or math.abs(dy) >= 3 then
                 local tile = TheWorld.Map:GetTile(tx + dx, ty + dy)
                 if tile == WORLD_TILES.METEOR or tile == WORLD_TILES.PEBBLEBEACH then
                     table.insert(available_tiles, { dx = dx, dy = dy, tile = tile })
@@ -55,7 +65,7 @@ local function generate_objects(tx, ty)
         for i, pos in ipairs(available_tiles) do
             if is_coast then
                 -- 海岸物件專屬規則：距離必須大於 5 (允許沙灘或岩石)
-                if math.abs(pos.dx) > 5 or math.abs(pos.dy) > 5 then
+                if math.abs(pos.dx) >= 5 or math.abs(pos.dy) >= 5 then
                     table.insert(candidates, i)
                 end
             else
