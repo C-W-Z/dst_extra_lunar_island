@@ -14,6 +14,7 @@ TUNING.EXTRA_CIRCLE_LUNAR.CENTER_WATER = GetModConfigData(modid .. '_center_wate
 TUNING.EXTRA_CIRCLE_LUNAR.CENTER_ENTITY = GetModConfigData(modid .. '_center_entity')
 TUNING.EXTRA_CIRCLE_LUNAR.OCEANVINE = GetModConfigData(modid .. '_oceanvine')
 TUNING.EXTRA_CIRCLE_LUNAR.OCEANVINE_DISTANCE = GetModConfigData(modid .. '_oceanvine_distance')
+TUNING.EXTRA_CIRCLE_LUNAR.STARFISH = GetModConfigData(modid .. '_starfish')
 
 require "map/terrain"
 require "map/ocean_gen"
@@ -38,20 +39,57 @@ if not layoutfile then
     return
 end
 
--- 方形修改邏輯
-if TUNING.EXTRA_CIRCLE_LUNAR.SHAPE == "square" then
-    -- 將 layout 載入記憶體
-    local layout_data = require(layoutfile)
-    if layout_data and layout_data.layers and layout_data.layers[1] then
-        local tiles = layout_data.layers[1].data
-        -- 遍歷所有地皮，將原本代表空地或海洋的 0，全部填滿為月島地皮 34
-        local new_tile = 34 -- 月球環形山地皮
-        if TUNING.EXTRA_CIRCLE_LUNAR.BEACH then new_tile = 33 end -- 岩石海灘地皮
-        for i = 1, #tiles do
-            if not TUNING.EXTRA_CIRCLE_LUNAR.BEACH and tiles[i] == 33 then
-                tiles[i] = 34 -- 將岩石海灘地皮換成月島地皮
-            elseif tiles[i] == 0 then
-                tiles[i] = new_tile
+-- 將 layout 載入記憶體
+local layout_data = require(layoutfile)
+if layout_data and layout_data.layers and layout_data.layers[1] then
+    local tiles = layout_data.layers[1].data
+    local width = layout_data.width
+    local height = layout_data.height
+
+    -- 計算外圍留白的格數
+    -- padding 是為了確保啟蒙區域覆蓋整個島
+    local padding = math.floor((width - TUNING.EXTRA_CIRCLE_LUNAR.SIZE) / 2)
+
+    -- 定義內部真實島嶼的邊界座標
+    local min_x = 1 + padding
+    local max_x = width - padding
+    local min_y = 1 + padding
+    local max_y = height - padding
+
+    -- 讀取設定
+    local is_square = (TUNING.EXTRA_CIRCLE_LUNAR.SHAPE == "square")
+    local use_beach = TUNING.EXTRA_CIRCLE_LUNAR.BEACH
+
+    -- 遍歷所有地皮
+    for i = 1, #tiles do
+        -- 將一維陣列的索引 i 轉換為二維的 (x, y) 座標
+        local x = ((i - 1) % width) + 1
+        local y = math.floor((i - 1) / width) + 1
+
+        -- 判斷目前座標是否落在「真實島嶼」的範圍內
+        if x >= min_x and x <= max_x and y >= min_y and y <= max_y then
+            if is_square then
+                -- 【方形邏輯】直接重新定義整塊方形島嶼
+                if use_beach then
+                    -- 計算與邊緣的距離 (0代表最外圈，1代表往內一圈)
+                    local dist_x = math.min(x - min_x, max_x - x)
+                    local dist_y = math.min(y - min_y, max_y - y)
+
+                    -- 如果距離小於2 (即距離邊緣 0 或 1)，就是在外面兩層
+                    if dist_x < 2 or dist_y < 2 then
+                        tiles[i] = 33 -- 外面兩層填海灘
+                    else
+                        tiles[i] = 34 -- 中間填月島地皮
+                    end
+                else
+                    -- 如果禁用海灘，整塊方形全部填34
+                    tiles[i] = 34
+                end
+            else
+                -- 【圓形邏輯】保留原本Tiled畫好的形狀，只處理禁用海灘的情況
+                if not use_beach and tiles[i] == 33 then
+                    tiles[i] = 34
+                end
             end
         end
     end
