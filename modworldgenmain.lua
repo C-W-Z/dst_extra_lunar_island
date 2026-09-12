@@ -9,6 +9,7 @@ modimport('scripts/' .. modid .. '/tuning.lua')
 TUNING.EXTRA_CIRCLE_LUNAR.NUM = GetModConfigData(modid .. '_num')
 TUNING.EXTRA_CIRCLE_LUNAR.SHAPE = GetModConfigData(modid .. '_shape')
 TUNING.EXTRA_CIRCLE_LUNAR.SIZE = GetModConfigData(modid .. '_size')
+TUNING.EXTRA_CIRCLE_LUNAR.BEACH = GetModConfigData(modid .. '_beach')
 TUNING.EXTRA_CIRCLE_LUNAR.CENTER_WATER = GetModConfigData(modid .. '_center_water')
 TUNING.EXTRA_CIRCLE_LUNAR.CENTER_ENTITY = GetModConfigData(modid .. '_center_entity')
 TUNING.EXTRA_CIRCLE_LUNAR.OCEANVINE = GetModConfigData(modid .. '_oceanvine')
@@ -44,9 +45,13 @@ if TUNING.EXTRA_CIRCLE_LUNAR.SHAPE == "square" then
     if layout_data and layout_data.layers and layout_data.layers[1] then
         local tiles = layout_data.layers[1].data
         -- 遍歷所有地皮，將原本代表空地或海洋的 0，全部填滿為月島地皮 34
+        local new_tile = 34 -- 月球環形山地皮
+        if TUNING.EXTRA_CIRCLE_LUNAR.BEACH then new_tile = 33 end -- 岩石海灘地皮
         for i = 1, #tiles do
-            if tiles[i] == 0 then
-                tiles[i] = 34
+            if not TUNING.EXTRA_CIRCLE_LUNAR.BEACH and tiles[i] == 33 then
+                tiles[i] = 34 -- 將岩石海灘地皮換成月島地皮
+            elseif tiles[i] == 0 then
+                tiles[i] = new_tile
             end
         end
     end
