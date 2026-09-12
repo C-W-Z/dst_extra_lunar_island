@@ -87,7 +87,7 @@ return {
         -- },
         {
           name = "",
-          type = "extra_circle_lunar/moon_pool_anchor",
+          type = "extra_circle_lunar/center_anchor",
           shape = "rectangle",
           x = 576,
           y = 576,
@@ -95,7 +95,7 @@ return {
           height = 64,
           visible = true,
           properties = {}
-        }
+        },
       }
     }
   }

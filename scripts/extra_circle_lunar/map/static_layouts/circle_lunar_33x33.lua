@@ -79,7 +79,7 @@ return {
       objects = {
         {
           name = "",
-          type = "extra_circle_lunar/moon_pool_anchor",
+          type = "extra_circle_lunar/center_anchor",
           shape = "rectangle",
           x = 1056,
           y = 1056,
@@ -110,7 +110,7 @@ return {
         --   visible = true,
         --   properties = {}
         -- }
-      }
+      },
     }
   }
 }
