@@ -15,6 +15,11 @@ TUNING.EXTRA_CIRCLE_LUNAR.CENTER_ENTITY = GetModConfigData(modid .. '_center_ent
 TUNING.EXTRA_CIRCLE_LUNAR.OCEANVINE = GetModConfigData(modid .. '_oceanvine')
 TUNING.EXTRA_CIRCLE_LUNAR.OCEANVINE_DISTANCE = GetModConfigData(modid .. '_oceanvine_distance')
 TUNING.EXTRA_CIRCLE_LUNAR.STARFISH = GetModConfigData(modid .. '_starfish')
+TUNING.EXTRA_CIRCLE_LUNAR.MOONGLASS = GetModConfigData(modid .. '_moonglass')
+TUNING.EXTRA_CIRCLE_LUNAR.MOONROCK = GetModConfigData(modid .. '_moonrock')
+TUNING.EXTRA_CIRCLE_LUNAR.KELP = GetModConfigData(modid .. '_kelp')
+TUNING.EXTRA_CIRCLE_LUNAR.BONES = GetModConfigData(modid .. '_bones')
+TUNING.EXTRA_CIRCLE_LUNAR.DRIFTWOOD = GetModConfigData(modid .. '_driftwood')
 
 PrefabFiles = {
     "extra_circle_lunar/center_anchor",
