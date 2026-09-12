@@ -7,16 +7,6 @@ local LANGS = {
         name = '额外圆形月岛',
         description = '详细功能请查看模组设置\n\n额外生成一个或多个圆形/方形月岛，不影响原本月岛，可作为基地使用（薇克巴顿最爱）。',
         config = {
-            -- {'设置的id','设置的名称','聚焦时显示的提示',默认值,{
-            --     {选项一,值},
-            --     {选项二,值}
-            -- }},
-            -- { '语言' },
-            -- { modid .. '_lang', '语言', '语言', 'cn', {
-            --     { '简体中文', 'cn' },
-            --     { 'English', 'en' }
-            -- } },
-            -- { '功能' },
             { modid .. '_num', '数量', '生成几个额外月岛', 1, {
                 { "1", 1, "额外生成一个月岛" },
                 { "2", 2, "额外生成两个月岛" },
@@ -66,7 +56,7 @@ local LANGS = {
                 { "6", 6, "位置选四角会超出庇荫范围，可配合扩大水中木范围的模组使用" },
             } },
             { "自然資源生成（密度总和超过100%会按比例分配）" },
-            { modid .. '_clear_space', '强制空地比例', '每座岛至少有多少比例的地皮是空地', 20, {
+            { modid .. '_clear_space', '强制空地比例', '每座岛至少有多少比例的地皮是空地', 30, {
                 { "禁用", 0 }, { "10%", 10 }, { "20%", 20 }, { "25%", 25 }, { "30%", 30 }, { "40%", 40 }, { "50%", 50 }, { "60%", 60 }, { "70%", 70 }, { "75%", 75 }, { "80%", 80 }, { "90%", 90 }, { "100%", 100 },
             } },
             { modid .. '_starfish', '海星密度', '每座岛生成的海星数量占可用地皮的比例', 10, {
@@ -75,7 +65,7 @@ local LANGS = {
             { modid .. '_kelp', '海带根密度', '每座岛生成的公牛海带根数量占可用地皮的比例', 10, {
                 { "不生成", 0 }, { "1%", 1 }, { "2%", 2 }, { "3%", 3 }, { "5%", 5 }, { "10%", 10 }, { "15%", 15 }, { "20%", 20 }, { "25%", 25 }, { "30%", 30 }, { "40%", 40 }, { "50%", 50 }, { "60%", 60 }, { "70%", 70 }, { "75%", 75 }, { "80%", 80 }, { "90%", 90 }, { "100%", 100 },
             } },
-            { modid .. '_bones', '海骨密度', '每座岛生成的海骨数量占可用地皮的比例', 5, {
+            { modid .. '_bones', '海骨密度', '每座岛生成的海骨数量占可用地皮的比例', 3, {
                 { "不生成", 0 }, { "1%", 1 }, { "2%", 2 }, { "3%", 3 }, { "5%", 5 }, { "10%", 10 }, { "15%", 15 }, { "20%", 20 }, { "25%", 25 }, { "30%", 30 }, { "40%", 40 }, { "50%", 50 }, { "60%", 60 }, { "70%", 70 }, { "75%", 75 }, { "80%", 80 }, { "90%", 90 }, { "100%", 100 },
             } },
             { modid .. '_driftwood', '浮木密度', '每座岛生成的浮木数量占可用地皮的比例', 10, {
@@ -84,7 +74,7 @@ local LANGS = {
             { modid .. '_lunatree', '月树密度', '每座岛生成的月树数量占可用地皮的比例', 5, {
                 { "不生成", 0 }, { "1%", 1 }, { "2%", 2 }, { "3%", 3 }, { "5%", 5 }, { "10%", 10 }, { "15%", 15 }, { "20%", 20 }, { "25%", 25 }, { "30%", 30 }, { "40%", 40 }, { "50%", 50 }, { "60%", 60 }, { "70%", 70 }, { "75%", 75 }, { "80%", 80 }, { "90%", 90 }, { "100%", 100 },
             } },
-            { modid .. '_sapling', '树苗密度', '每座岛生成的树苗数量占可用地皮的比例', 5, {
+            { modid .. '_sapling', '树苗密度', '每座岛生成的树苗数量占可用地皮的比例', 3, {
                 { "不生成", 0 }, { "1%", 1 }, { "2%", 2 }, { "3%", 3 }, { "5%", 5 }, { "10%", 10 }, { "15%", 15 }, { "20%", 20 }, { "25%", 25 }, { "30%", 30 }, { "40%", 40 }, { "50%", 50 }, { "60%", 60 }, { "70%", 70 }, { "75%", 75 }, { "80%", 80 }, { "90%", 90 }, { "100%", 100 },
             } },
             { modid .. '_stonefruit', '石果密度', '每座岛生成的石果灌木丛数量占可用地皮的比例', 10, {
@@ -93,13 +83,13 @@ local LANGS = {
             { modid .. '_moonglass', '月光玻璃密度', '每座岛生成的月光玻璃矿数量占可用地皮的比例', 5, {
                 { "不生成", 0 }, { "1%", 1 }, { "2%", 2 }, { "3%", 3 }, { "5%", 5 }, { "10%", 10 }, { "15%", 15 }, { "20%", 20 }, { "25%", 25 }, { "30%", 30 }, { "40%", 40 }, { "50%", 50 }, { "60%", 60 }, { "70%", 70 }, { "75%", 75 }, { "80%", 80 }, { "90%", 90 }, { "100%", 100 },
             } },
-            { modid .. '_moonrock', '月岩密度', '每座岛生成的月岩数量占可用地皮的比例', 5, {
+            { modid .. '_moonrock', '月岩密度', '每座岛生成的月岩数量占可用地皮的比例', 3, {
                 { "不生成", 0 }, { "1%", 1 }, { "2%", 2 }, { "3%", 3 }, { "5%", 5 }, { "10%", 10 }, { "15%", 15 }, { "20%", 20 }, { "25%", 25 }, { "30%", 30 }, { "40%", 40 }, { "50%", 50 }, { "60%", 60 }, { "70%", 70 }, { "75%", 75 }, { "80%", 80 }, { "90%", 90 }, { "100%", 100 },
             } },
-            { modid .. '_goldrock', '金矿密度', '每座岛生成的金矿数量占可用地皮的比例', 3, {
+            { modid .. '_goldrock', '金矿密度', '每座岛生成的金矿数量占可用地皮的比例', 1, {
                 { "不生成", 0 }, { "1%", 1 }, { "2%", 2 }, { "3%", 3 }, { "5%", 5 }, { "10%", 10 }, { "15%", 15 }, { "20%", 20 }, { "25%", 25 }, { "30%", 30 }, { "40%", 40 }, { "50%", 50 }, { "60%", 60 }, { "70%", 70 }, { "75%", 75 }, { "80%", 80 }, { "90%", 90 }, { "100%", 100 },
             } },
-            { modid .. '_rock', '岩石密度', '每座岛生成的岩石数量占可用地皮的比例', 3, {
+            { modid .. '_rock', '岩石密度', '每座岛生成的岩石数量占可用地皮的比例', 2, {
                 { "不生成", 0 }, { "1%", 1 }, { "2%", 2 }, { "3%", 3 }, { "5%", 5 }, { "10%", 10 }, { "15%", 15 }, { "20%", 20 }, { "25%", 25 }, { "30%", 30 }, { "40%", 40 }, { "50%", 50 }, { "60%", 60 }, { "70%", 70 }, { "75%", 75 }, { "80%", 80 }, { "90%", 90 }, { "100%", 100 },
             } },
             { modid .. '_caverock', '落石密度', '每座岛生成的落石数量占可用地皮的比例', 0, {
@@ -109,15 +99,8 @@ local LANGS = {
     },
     ['en'] = {
         name = "Extra Circular Lunar Island",
-        description =
-        'For detailed features, please check the mod settings.\n\nGenerates one or more extra circular/square Lunar Islands without affecting the original one. Perfect for a base (Wickerbottom\'s favorite).',
+        description = 'For detailed features, please check the mod settings.\n\nGenerates one or more extra circular/square Lunar Islands without affecting the original one. Perfect for a base (Wickerbottom\'s favorite).',
         config = {
-            -- { 'LANGUAGE' },
-            -- { modid .. '_lang', 'Language', 'Choose language', 'en', {
-            --     { '简体中文', 'cn' },
-            --     { 'English', 'en' }
-            -- } },
-            -- { 'FUNCTIONS' },
             { modid .. '_num', 'Amount', 'How many extra Lunar Islands to generate', 1, {
                 { "1", 1, "Generate 1 extra Lunar Island" },
                 { "2", 2, "Generate 2 extra Lunar Islands" },
@@ -163,46 +146,49 @@ local LANGS = {
                 { "3.5", 3.5, "3.5 tiles away from the center" },
                 { "4",   4,   "4 tiles away from the center" },
                 { "4.5", 4.5, "4.5 tiles away from the center" },
-                { "5",   5,   "Corners will exceed the shelter, recommended to use with shelter expanding mods" },
-                { "5.5", 5.5, "Corners will exceed the shelter, recommended to use with shelter expanding mods" },
-                { "6",   6,   "Corners will exceed the shelter, recommended to use with shelter expanding mods" },
+                { "5",   5,   "Corners will exceed canopy shade, use with canopy expanding mods" },
+                { "5.5", 5.5, "Corners will exceed canopy shade, use with canopy expanding mods" },
+                { "6",   6,   "Corners will exceed canopy shade, use with canopy expanding mods" },
             } },
-            { "Natural Resources Generation" },
-            { modid .. '_starfish', 'Starfish Density', 'Max Starfish spawned per extra island', 10, {
-                { "Disabled", 0 }, { "1", 1 }, { "3", 3 }, { "5", 5 }, { "10", 10 }, { "15", 15 }, { "20", 20 }, { "25", 25 }, { "30", 30 }, { "40", 40 }, { "50", 50 }, { "75", 75 }, { "100", 100 },
+            { "Natural Resources Generation (Proportional if total exceeds 100%)" },
+            { modid .. '_clear_space', 'Mandatory Clear Space', 'Minimum percentage of clear tiles reserved per island', 30, {
+                { "Disabled", 0 }, { "10%", 10 }, { "20%", 20 }, { "25%", 25 }, { "30%", 30 }, { "40%", 40 }, { "50%", 50 }, { "60%", 60 }, { "70%", 70 }, { "75%", 75 }, { "80%", 80 }, { "90%", 90 }, { "100%", 100 },
             } },
-            { modid .. '_kelp', 'Bull Kelp Root Density', 'Max Bull Kelp Roots spawned per extra island', 5, {
-                { "Disabled", 0 }, { "1", 1 }, { "3", 3 }, { "5", 5 }, { "10", 10 }, { "15", 15 }, { "20", 20 }, { "25", 25 }, { "30", 30 },
+            { modid .. '_starfish', 'Starfish Density', 'Percentage of available tiles to spawn Starfish', 10, {
+                { "None", 0 }, { "1%", 1 }, { "2%", 2 }, { "3%", 3 }, { "5%", 5 }, { "10%", 10 }, { "15%", 15 }, { "20%", 20 }, { "25%", 25 }, { "30%", 30 }, { "40%", 40 }, { "50%", 50 }, { "60%", 60 }, { "70%", 70 }, { "75%", 75 }, { "80%", 80 }, { "90%", 90 }, { "100%", 100 },
             } },
-            { modid .. '_bones', 'Sea Bones Density', 'Max Sea Bones spawned per extra island', 3, {
-                { "Disabled", 0 }, { "1", 1 }, { "3", 3 }, { "5", 5 }, { "10", 10 }, { "15", 15 }, { "20", 20 }, { "25", 25 }, { "30", 30 },
+            { modid .. '_kelp', 'Bull Kelp Root Density', 'Percentage of available tiles to spawn Bull Kelp Roots', 10, {
+                { "None", 0 }, { "1%", 1 }, { "2%", 2 }, { "3%", 3 }, { "5%", 5 }, { "10%", 10 }, { "15%", 15 }, { "20%", 20 }, { "25%", 25 }, { "30%", 30 }, { "40%", 40 }, { "50%", 50 }, { "60%", 60 }, { "70%", 70 }, { "75%", 75 }, { "80%", 80 }, { "90%", 90 }, { "100%", 100 },
             } },
-            { modid .. '_driftwood', 'Driftwood Density', 'Max Driftwood spawned per extra island', 5, {
-                { "Disabled", 0 }, { "1", 1 }, { "3", 3 }, { "5", 5 }, { "10", 10 }, { "15", 15 }, { "20", 20 }, { "25", 25 }, { "30", 30 },
+            { modid .. '_bones', 'Sea Bones Density', 'Percentage of available tiles to spawn Sea Bones', 3, {
+                { "None", 0 }, { "1%", 1 }, { "2%", 2 }, { "3%", 3 }, { "5%", 5 }, { "10%", 10 }, { "15%", 15 }, { "20%", 20 }, { "25%", 25 }, { "30%", 30 }, { "40%", 40 }, { "50%", 50 }, { "60%", 60 }, { "70%", 70 }, { "75%", 75 }, { "80%", 80 }, { "90%", 90 }, { "100%", 100 },
             } },
-            { modid .. '_lunatree', 'Lune Tree Density', 'Max Lune Trees spawned per extra island', 5, {
-                { "Disabled", 0 }, { "1", 1 }, { "3", 3 }, { "5", 5 }, { "10", 10 }, { "15", 15 }, { "20", 20 }, { "25", 25 }, { "30", 30 },
+            { modid .. '_driftwood', 'Driftwood Density', 'Percentage of available tiles to spawn Driftwood', 10, {
+                { "None", 0 }, { "1%", 1 }, { "2%", 2 }, { "3%", 3 }, { "5%", 5 }, { "10%", 10 }, { "15%", 15 }, { "20%", 20 }, { "25%", 25 }, { "30%", 30 }, { "40%", 40 }, { "50%", 50 }, { "60%", 60 }, { "70%", 70 }, { "75%", 75 }, { "80%", 80 }, { "90%", 90 }, { "100%", 100 },
             } },
-            { modid .. '_sapling', 'Sapling Density', 'Max Saplings spawned per extra island', 5, {
-                { "Disabled", 0 }, { "1", 1 }, { "3", 3 }, { "5", 5 }, { "10", 10 }, { "15", 15 }, { "20", 20 }, { "25", 25 }, { "30", 30 },
+            { modid .. '_lunatree', 'Lune Tree Density', 'Percentage of available tiles to spawn Lune Trees', 5, {
+                { "None", 0 }, { "1%", 1 }, { "2%", 2 }, { "3%", 3 }, { "5%", 5 }, { "10%", 10 }, { "15%", 15 }, { "20%", 20 }, { "25%", 25 }, { "30%", 30 }, { "40%", 40 }, { "50%", 50 }, { "60%", 60 }, { "70%", 70 }, { "75%", 75 }, { "80%", 80 }, { "90%", 90 }, { "100%", 100 },
             } },
-            { modid .. '_stonefruit', 'Stone Fruit Bush Density', 'Max Stone Fruit Bushes spawned per extra island', 5, {
-                { "Disabled", 0 }, { "1", 1 }, { "3", 3 }, { "5", 5 }, { "10", 10 }, { "15", 15 }, { "20", 20 }, { "25", 25 }, { "30", 30 },
+            { modid .. '_sapling', 'Sapling Density', 'Percentage of available tiles to spawn Saplings', 3, {
+                { "None", 0 }, { "1%", 1 }, { "2%", 2 }, { "3%", 3 }, { "5%", 5 }, { "10%", 10 }, { "15%", 15 }, { "20%", 20 }, { "25%", 25 }, { "30%", 30 }, { "40%", 40 }, { "50%", 50 }, { "60%", 60 }, { "70%", 70 }, { "75%", 75 }, { "80%", 80 }, { "90%", 90 }, { "100%", 100 },
             } },
-            { modid .. '_moonglass', 'Moonglass Rock Density', 'Max Moonglass Rocks spawned per extra island', 5, {
-                { "Disabled", 0 }, { "1", 1 }, { "3", 3 }, { "5", 5 }, { "10", 10 }, { "15", 15 }, { "20", 20 }, { "25", 25 }, { "30", 30 },
+            { modid .. '_stonefruit', 'Stone Fruit Bush Density', 'Percentage of available tiles to spawn Stone Fruit Bushes', 10, {
+                { "None", 0 }, { "1%", 1 }, { "2%", 2 }, { "3%", 3 }, { "5%", 5 }, { "10%", 10 }, { "15%", 15 }, { "20%", 20 }, { "25%", 25 }, { "30%", 30 }, { "40%", 40 }, { "50%", 50 }, { "60%", 60 }, { "70%", 70 }, { "75%", 75 }, { "80%", 80 }, { "90%", 90 }, { "100%", 100 },
             } },
-            { modid .. '_moonrock', 'Moon Rock Density', 'Max Moon Rocks spawned per extra island', 5, {
-                { "Disabled", 0 }, { "1", 1 }, { "3", 3 }, { "5", 5 }, { "10", 10 }, { "15", 15 }, { "20", 20 }, { "25", 25 }, { "30", 30 },
+            { modid .. '_moonglass', 'Moonglass Rock Density', 'Percentage of available tiles to spawn Moonglass Rocks', 5, {
+                { "None", 0 }, { "1%", 1 }, { "2%", 2 }, { "3%", 3 }, { "5%", 5 }, { "10%", 10 }, { "15%", 15 }, { "20%", 20 }, { "25%", 25 }, { "30%", 30 }, { "40%", 40 }, { "50%", 50 }, { "60%", 60 }, { "70%", 70 }, { "75%", 75 }, { "80%", 80 }, { "90%", 90 }, { "100%", 100 },
             } },
-            { modid .. '_goldrock', 'Gold Vein Density', 'Max Gold Veins spawned per extra island', 3, {
-                { "Disabled", 0 }, { "1", 1 }, { "3", 3 }, { "5", 5 }, { "10", 10 }, { "15", 15 }, { "20", 20 }, { "25", 25 }, { "30", 30 },
+            { modid .. '_moonrock', 'Moonrock Density', 'Percentage of available tiles to spawn Moonrocks', 3, {
+                { "None", 0 }, { "1%", 1 }, { "2%", 2 }, { "3%", 3 }, { "5%", 5 }, { "10%", 10 }, { "15%", 15 }, { "20%", 20 }, { "25%", 25 }, { "30%", 30 }, { "40%", 40 }, { "50%", 50 }, { "60%", 60 }, { "70%", 70 }, { "75%", 75 }, { "80%", 80 }, { "90%", 90 }, { "100%", 100 },
             } },
-            { modid .. '_rock', 'Rock Density', 'Max Rocks spawned per extra island', 3, {
-                { "Disabled", 0 }, { "1", 1 }, { "3", 3 }, { "5", 5 }, { "10", 10 }, { "15", 15 }, { "20", 20 }, { "25", 25 }, { "30", 30 },
+            { modid .. '_goldrock', 'Gold Vein Density', 'Percentage of available tiles to spawn Gold Veins', 1, {
+                { "None", 0 }, { "1%", 1 }, { "2%", 2 }, { "3%", 3 }, { "5%", 5 }, { "10%", 10 }, { "15%", 15 }, { "20%", 20 }, { "25%", 25 }, { "30%", 30 }, { "40%", 40 }, { "50%", 50 }, { "60%", 60 }, { "70%", 70 }, { "75%", 75 }, { "80%", 80 }, { "90%", 90 }, { "100%", 100 },
             } },
-            { modid .. '_caverock', 'Cave-in Boulder Density', 'Max Cave-in Boulders spawned per extra island', 0, {
-                { "Disabled", 0 }, { "1", 1 }, { "3", 3 }, { "5", 5 }, { "10", 10 }, { "15", 15 }, { "20", 20 }, { "25", 25 }, { "30", 30 },
+            { modid .. '_rock', 'Boulder Density', 'Percentage of available tiles to spawn Boulders', 2, {
+                { "None", 0 }, { "1%", 1 }, { "2%", 2 }, { "3%", 3 }, { "5%", 5 }, { "10%", 10 }, { "15%", 15 }, { "20%", 20 }, { "25%", 25 }, { "30%", 30 }, { "40%", 40 }, { "50%", 50 }, { "60%", 60 }, { "70%", 70 }, { "75%", 75 }, { "80%", 80 }, { "90%", 90 }, { "100%", 100 },
+            } },
+            { modid .. '_caverock', 'Cave-in Boulder Density', 'Percentage of available tiles to spawn Cave-in Boulders', 0, {
+                { "None", 0 }, { "1%", 1 }, { "2%", 2 }, { "3%", 3 }, { "5%", 5 }, { "10%", 10 }, { "15%", 15 }, { "20%", 20 }, { "25%", 25 }, { "30%", 30 }, { "40%", 40 }, { "50%", 50 }, { "60%", 60 }, { "70%", 70 }, { "75%", 75 }, { "80%", 80 }, { "90%", 90 }, { "100%", 100 },
             } },
         }
     }

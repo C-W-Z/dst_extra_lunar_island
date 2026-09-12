@@ -20,7 +20,7 @@ local function generate_objects(tx, ty)
     if total_usable_tiles == 0 then return end
 
     -- 計算強制空地保護機制 (限制最大生成數量)
-    local clear_space_pct = TUNING.EXTRA_CIRCLE_LUNAR.CLEAR_SPACE or 20
+    local clear_space_pct = TUNING.EXTRA_CIRCLE_LUNAR.CLEAR_SPACE or 0
     local max_spawn_limit = math.floor(total_usable_tiles * (1 - clear_space_pct / 100))
     local spawned_count = 0
 
