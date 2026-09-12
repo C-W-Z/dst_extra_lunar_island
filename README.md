@@ -1,4 +1,4 @@
-# 额外圆形月岛 (Extra Circular Lunar Island)
+# 额外圆形月岛 Extra Circular Lunar Island
 
 本MOD灵感来源于此地图种子码：[url=https://www.bilibili.com/video/BV1WF4m1L7rX/]炸裂！总分5.5！非模板建家长期档玩家表示从没见过这么圆的月岛！[/url]，因为想在[url=https://steamcommunity.com/sharedfiles/filedetails/?id=1392778117]棱镜[/url]等模组地图也能玩到圆形月岛，故有此模组之诞生
 
@@ -26,9 +26,12 @@
 [*] 自然生成选项新增：岩石、金矿、芦苇、猴尾草、香蕉丛、棕梠树、沙拉蝾螈、破碎蜘蛛洞、食人花、月亮蘑菇树、萤光花、球状光虫巢穴版萤光花
 [/list]
 
-# Extra Circular Lunar Island
+[h2]如果你喜欢我的模组，请点赞并收藏！[/h2]
+[img]https://steamuserimages-a.akamaihd.net/ugc/27680204237595119/AD467A988E9C966C580668CA6BFECE0849A48893/[/img]
 
-This mod is inspired by the map seed showcased in this video: [url=[https://www.bilibili.com/video/BV1WF4m1L7rX/](https://www.bilibili.com/video/BV1WF4m1L7rX/)]Mind-blowing! Score 5.5! Veteran base-building players have never seen a Lunar Island this circular![/url] Since I wanted to play on a circular Lunar Island even on modded maps like [url=https://steamcommunity.com/sharedfiles/filedetails/?id=1392778117]Legion[/url], this mod was born.
+# Extra Circular Lunar Island 额外圆形月岛
+
+This mod is inspired by the map seed showcased in this video: [url=https://www.bilibili.com/video/BV1WF4m1L7rX/]Mind-blowing! Score 5.5! Veteran base-building players have never seen a Lunar Island this circular![/url] Since I wanted to play on a circular Lunar Island even on modded maps like [url=https://steamcommunity.com/sharedfiles/filedetails/?id=1392778117]Legion[/url], this mod was born.
 
 Want to build a base on the Lunar Island, but find the original shape unappealing? This mod allows you to generate 1 to 3 extra custom Lunar Islands in your world without affecting the generation of the original one! Perfect for base building, Wickerbottom's absolute favorite, truly a Grandma's happy island.
 
@@ -53,3 +56,6 @@ Want to build a base on the Lunar Island, but find the original shape unappealin
 [*] New center entity options: Florid Postern, Unnatural Portal, Moon Stone, Magma Pool, Tumbleweed Spawner, Tidy Hidey-Hole, Ancient Orchestrina, Ancient Pseudoscience Station, Plugged Sinkhole.
 [*] New natural generation options: Rocks, Gold Veins, Reeds, Monkeytails, Banana Bushes, Palmcone Trees, Saladmanders, Shattered Spider Holes, Lureplants, Lunar Mushtree, Light Flowers, and Light Flowers (Bulbous Lightbug den variant).
 [/list]
+
+[h2]If you like my mod, please thumbs up and favorite![/h2]
+[img]https://steamuserimages-a.akamaihd.net/ugc/27680204237595119/AD467A988E9C966C580668CA6BFECE0849A48893/[/img]

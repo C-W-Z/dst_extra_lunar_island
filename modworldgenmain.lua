@@ -23,6 +23,9 @@ TUNING.EXTRA_CIRCLE_LUNAR.SAPLING = GetModConfigData(modid .. '_sapling')
 TUNING.EXTRA_CIRCLE_LUNAR.STONEFRUIT = GetModConfigData(modid .. '_stonefruit')
 TUNING.EXTRA_CIRCLE_LUNAR.MOONGLASS = GetModConfigData(modid .. '_moonglass')
 TUNING.EXTRA_CIRCLE_LUNAR.MOONROCK = GetModConfigData(modid .. '_moonrock')
+TUNING.EXTRA_CIRCLE_LUNAR.GOLDROCK = GetModConfigData(modid .. '_goldrock')
+TUNING.EXTRA_CIRCLE_LUNAR.ROCK = GetModConfigData(modid .. '_rock')
+TUNING.EXTRA_CIRCLE_LUNAR.CAVEROCK = GetModConfigData(modid .. '_caverock')
 
 require "map/terrain"
 require "map/ocean_gen"

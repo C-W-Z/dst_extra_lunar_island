@@ -65,33 +65,42 @@ local LANGS = {
                 { "5.5", 5.5, "位置选四角会超出庇荫范围，可配合扩大水中木范围的模组使用" },
                 { "6", 6, "位置选四角会超出庇荫范围，可配合扩大水中木范围的模组使用" },
             } },
-            { "自然生成" },
-            { modid .. '_starfish', '海星数量', '每座额外月岛最多生成几个海星', 0, {
-                { "禁用", 0 }, { "5个", 5 }, { "10个", 10 }, { "15个", 15 }, { "20个", 20 }, { "25个", 25 }, { "30个", 30 }, { "40个", 40 }, { "50个", 50 }, { "75个", 75 }, { "100个", 100 },
+            { "自然資源生成" },
+            { modid .. '_starfish', '海星数量', '每座额外月岛最多生成几个海星', 10, {
+                { "禁用", 0 }, { "1个", 1 }, { "3个", 3 }, { "5个", 5 }, { "10个", 10 }, { "15个", 15 }, { "20个", 20 }, { "25个", 25 }, { "30个", 30 }, { "40个", 40 }, { "50个", 50 }, { "75个", 75 }, { "100个", 100 },
             } },
-            { modid .. '_kelp', '海带根数量', '每座额外月岛最多生成几个公牛海带根', 0, {
-                { "禁用", 0 }, { "5个", 5 }, { "10个", 10 }, { "15个", 15 }, { "20个", 20 }, { "25个", 25 }, { "30个", 30 },
+            { modid .. '_kelp', '海带根数量', '每座额外月岛最多生成几个公牛海带根', 5, {
+                { "禁用", 0 }, { "1个", 1 }, { "3个", 3 }, { "5个", 5 }, { "10个", 10 }, { "15个", 15 }, { "20个", 20 }, { "25个", 25 }, { "30个", 30 },
             } },
-            { modid .. '_bones', '海骨数量', '每座额外月岛最多生成几个海骨', 0, {
-                { "禁用", 0 }, { "5个", 5 }, { "10个", 10 }, { "15个", 15 }, { "20个", 20 }, { "25个", 25 }, { "30个", 30 },
+            { modid .. '_bones', '海骨数量', '每座额外月岛最多生成几个海骨', 3, {
+                { "禁用", 0 }, { "1个", 1 }, { "3个", 3 }, { "5个", 5 }, { "10个", 10 }, { "15个", 15 }, { "20个", 20 }, { "25个", 25 }, { "30个", 30 },
             } },
-            { modid .. '_driftwood', '浮木数量', '每座额外月岛最多生成几个浮木', 0, {
-                { "禁用", 0 }, { "5个", 5 }, { "10个", 10 }, { "15个", 15 }, { "20个", 20 }, { "25个", 25 }, { "30个", 30 },
+            { modid .. '_driftwood', '浮木数量', '每座额外月岛最多生成几个浮木', 5, {
+                { "禁用", 0 }, { "1个", 1 }, { "3个", 3 }, { "5个", 5 }, { "10个", 10 }, { "15个", 15 }, { "20个", 20 }, { "25个", 25 }, { "30个", 30 },
             } },
-            { modid .. '_lunatree', '月树数量', '每座额外月岛最多生成几棵月树', 0, {
-                { "禁用", 0 }, { "5个", 5 }, { "10个", 10 }, { "15个", 15 }, { "20个", 20 }, { "25个", 25 }, { "30个", 30 },
+            { modid .. '_lunatree', '月树数量', '每座额外月岛最多生成几棵月树', 5, {
+                { "禁用", 0 }, { "1个", 1 }, { "3个", 3 }, { "5个", 5 }, { "10个", 10 }, { "15个", 15 }, { "20个", 20 }, { "25个", 25 }, { "30个", 30 },
             } },
-            { modid .. '_sapling', '树苗数量', '每座额外月岛最多生成几个树苗', 0, {
-                { "禁用", 0 }, { "5个", 5 }, { "10个", 10 }, { "15个", 15 }, { "20个", 20 }, { "25个", 25 }, { "30个", 30 },
+            { modid .. '_sapling', '树苗数量', '每座额外月岛最多生成几个树苗', 5, {
+                { "禁用", 0 }, { "1个", 1 }, { "3个", 3 }, { "5个", 5 }, { "10个", 10 }, { "15个", 15 }, { "20个", 20 }, { "25个", 25 }, { "30个", 30 },
             } },
-            { modid .. '_stonefruit', '石果数量', '每座额外月岛最多生成几个石果灌木丛', 0, {
-                { "禁用", 0 }, { "5个", 5 }, { "10个", 10 }, { "15个", 15 }, { "20个", 20 }, { "25个", 25 }, { "30个", 30 },
+            { modid .. '_stonefruit', '石果数量', '每座额外月岛最多生成几个石果灌木丛', 5, {
+                { "禁用", 0 }, { "1个", 1 }, { "3个", 3 }, { "5个", 5 }, { "10个", 10 }, { "15个", 15 }, { "20个", 20 }, { "25个", 25 }, { "30个", 30 },
             } },
-            { modid .. '_moonglass', '月光玻璃数量', '每座额外月岛最多生成几个月光玻璃矿', 0, {
-                { "禁用", 0 }, { "5个", 5 }, { "10个", 10 }, { "15个", 15 }, { "20个", 20 }, { "25个", 25 }, { "30个", 30 },
+            { modid .. '_moonglass', '月光玻璃数量', '每座额外月岛最多生成几个月光玻璃矿', 5, {
+                { "禁用", 0 }, { "1个", 1 }, { "3个", 3 }, { "5个", 5 }, { "10个", 10 }, { "15个", 15 }, { "20个", 20 }, { "25个", 25 }, { "30个", 30 },
             } },
-            { modid .. '_moonrock', '月岩数量', '每座额外月岛最多生成几个月岩', 0, {
-                { "禁用", 0 }, { "5个", 5 }, { "10个", 10 }, { "15个", 15 }, { "20个", 20 }, { "25个", 25 }, { "30个", 30 },
+            { modid .. '_moonrock', '月岩数量', '每座额外月岛最多生成几个月岩', 5, {
+                { "禁用", 0 }, { "1个", 1 }, { "3个", 3 }, { "5个", 5 }, { "10个", 10 }, { "15个", 15 }, { "20个", 20 }, { "25个", 25 }, { "30个", 30 },
+            } },
+            { modid .. '_goldrock', '金矿数量', '每座额外月岛最多生成几个金矿', 3, {
+                { "禁用", 0 }, { "1个", 1 }, { "3个", 3 }, { "5个", 5 }, { "10个", 10 }, { "15个", 15 }, { "20个", 20 }, { "25个", 25 }, { "30个", 30 },
+            } },
+            { modid .. '_rock', '岩石数量', '每座额外月岛最多生成几个岩石', 3, {
+                { "禁用", 0 }, { "1个", 1 }, { "3个", 3 }, { "5个", 5 }, { "10个", 10 }, { "15个", 15 }, { "20个", 20 }, { "25个", 25 }, { "30个", 30 },
+            } },
+            { modid .. '_caverock', '落石数量', '每座额外月岛最多生成几个落石', 0, {
+                { "禁用", 0 }, { "1个", 1 }, { "3个", 3 }, { "5个", 5 }, { "10个", 10 }, { "15个", 15 }, { "20个", 20 }, { "25个", 25 }, { "30个", 30 },
             } },
         }
     },
@@ -155,33 +164,42 @@ local LANGS = {
                 { "5.5", 5.5, "Corners will exceed the shelter, recommended to use with shelter expanding mods" },
                 { "6",   6,   "Corners will exceed the shelter, recommended to use with shelter expanding mods" },
             } },
-            { "Natural Generation" },
-            { modid .. '_starfish', 'Starfish Count', 'Max Starfish spawned per extra island', 0, {
-                { "Disabled", 0 }, { "5", 5 }, { "10", 10 }, { "15", 15 }, { "20", 20 }, { "25", 25 }, { "30", 30 }, { "40", 40 }, { "50", 50 }, { "75", 75 }, { "100", 100 },
+            { "Natural Resources Generation" },
+            { modid .. '_starfish', 'Starfish Count', 'Max Starfish spawned per extra island', 10, {
+                { "Disabled", 0 }, { "1", 1 }, { "3", 3 }, { "5", 5 }, { "10", 10 }, { "15", 15 }, { "20", 20 }, { "25", 25 }, { "30", 30 }, { "40", 40 }, { "50", 50 }, { "75", 75 }, { "100", 100 },
             } },
-            { modid .. '_kelp', 'Bull Kelp Root Count', 'Max Bull Kelp Roots spawned per extra island', 0, {
-                { "Disabled", 0 }, { "5", 5 }, { "10", 10 }, { "15", 15 }, { "20", 20 }, { "25", 25 }, { "30", 30 },
+            { modid .. '_kelp', 'Bull Kelp Root Count', 'Max Bull Kelp Roots spawned per extra island', 5, {
+                { "Disabled", 0 }, { "1", 1 }, { "3", 3 }, { "5", 5 }, { "10", 10 }, { "15", 15 }, { "20", 20 }, { "25", 25 }, { "30", 30 },
             } },
-            { modid .. '_bones', 'Sea Bones Count', 'Max Sea Bones spawned per extra island', 0, {
-                { "Disabled", 0 }, { "5", 5 }, { "10", 10 }, { "15", 15 }, { "20", 20 }, { "25", 25 }, { "30", 30 },
+            { modid .. '_bones', 'Sea Bones Count', 'Max Sea Bones spawned per extra island', 3, {
+                { "Disabled", 0 }, { "1", 1 }, { "3", 3 }, { "5", 5 }, { "10", 10 }, { "15", 15 }, { "20", 20 }, { "25", 25 }, { "30", 30 },
             } },
-            { modid .. '_driftwood', 'Driftwood Count', 'Max Driftwood spawned per extra island', 0, {
-                { "Disabled", 0 }, { "5", 5 }, { "10", 10 }, { "15", 15 }, { "20", 20 }, { "25", 25 }, { "30", 30 },
+            { modid .. '_driftwood', 'Driftwood Count', 'Max Driftwood spawned per extra island', 5, {
+                { "Disabled", 0 }, { "1", 1 }, { "3", 3 }, { "5", 5 }, { "10", 10 }, { "15", 15 }, { "20", 20 }, { "25", 25 }, { "30", 30 },
             } },
-            { modid .. '_lunatree', 'Lune Tree Count', 'Max Lune Trees spawned per extra island', 0, {
-                { "Disabled", 0 }, { "5", 5 }, { "10", 10 }, { "15", 15 }, { "20", 20 }, { "25", 25 }, { "30", 30 },
+            { modid .. '_lunatree', 'Lune Tree Count', 'Max Lune Trees spawned per extra island', 5, {
+                { "Disabled", 0 }, { "1", 1 }, { "3", 3 }, { "5", 5 }, { "10", 10 }, { "15", 15 }, { "20", 20 }, { "25", 25 }, { "30", 30 },
             } },
-            { modid .. '_sapling', 'Sapling Count', 'Max Saplings spawned per extra island', 0, {
-                { "Disabled", 0 }, { "5", 5 }, { "10", 10 }, { "15", 15 }, { "20", 20 }, { "25", 25 }, { "30", 30 },
+            { modid .. '_sapling', 'Sapling Count', 'Max Saplings spawned per extra island', 5, {
+                { "Disabled", 0 }, { "1", 1 }, { "3", 3 }, { "5", 5 }, { "10", 10 }, { "15", 15 }, { "20", 20 }, { "25", 25 }, { "30", 30 },
             } },
-            { modid .. '_stonefruit', 'Stone Fruit Bush Count', 'Max Stone Fruit Bushes spawned per extra island', 0, {
-                { "Disabled", 0 }, { "5", 5 }, { "10", 10 }, { "15", 15 }, { "20", 20 }, { "25", 25 }, { "30", 30 },
+            { modid .. '_stonefruit', 'Stone Fruit Bush Count', 'Max Stone Fruit Bushes spawned per extra island', 5, {
+                { "Disabled", 0 }, { "1", 1 }, { "3", 3 }, { "5", 5 }, { "10", 10 }, { "15", 15 }, { "20", 20 }, { "25", 25 }, { "30", 30 },
             } },
-            { modid .. '_moonglass', 'Moonglass Rock Count', 'Max Moonglass Rocks spawned per extra island', 0, {
-                { "Disabled", 0 }, { "5", 5 }, { "10", 10 }, { "15", 15 }, { "20", 20 }, { "25", 25 }, { "30", 30 },
+            { modid .. '_moonglass', 'Moonglass Rock Count', 'Max Moonglass Rocks spawned per extra island', 5, {
+                { "Disabled", 0 }, { "1", 1 }, { "3", 3 }, { "5", 5 }, { "10", 10 }, { "15", 15 }, { "20", 20 }, { "25", 25 }, { "30", 30 },
             } },
-            { modid .. '_moonrock', 'Moon Rock Count', 'Max Moon Rocks spawned per extra island', 0, {
-                { "Disabled", 0 }, { "5", 5 }, { "10", 10 }, { "15", 15 }, { "20", 20 }, { "25", 25 }, { "30", 30 },
+            { modid .. '_moonrock', 'Moon Rock Count', 'Max Moon Rocks spawned per extra island', 5, {
+                { "Disabled", 0 }, { "1", 1 }, { "3", 3 }, { "5", 5 }, { "10", 10 }, { "15", 15 }, { "20", 20 }, { "25", 25 }, { "30", 30 },
+            } },
+            { modid .. '_goldrock', 'Gold Vein Count', 'Max Gold Veins spawned per extra island', 3, {
+                { "Disabled", 0 }, { "1", 1 }, { "3", 3 }, { "5", 5 }, { "10", 10 }, { "15", 15 }, { "20", 20 }, { "25", 25 }, { "30", 30 },
+            } },
+            { modid .. '_rock', 'Rock Count', 'Max Rocks spawned per extra island', 3, {
+                { "Disabled", 0 }, { "1", 1 }, { "3", 3 }, { "5", 5 }, { "10", 10 }, { "15", 15 }, { "20", 20 }, { "25", 25 }, { "30", 30 },
+            } },
+            { modid .. '_caverock', 'Cave-in Boulder Count', 'Max Cave-in Boulders spawned per extra island', 0, {
+                { "Disabled", 0 }, { "1", 1 }, { "3", 3 }, { "5", 5 }, { "10", 10 }, { "15", 15 }, { "20", 20 }, { "25", 25 }, { "30", 30 },
             } },
         }
     }
@@ -191,21 +209,21 @@ local LANGS = {
 local cur = (locale == 'zh' or locale == 'zhr' or locale == 'zht') and 'zh' or 'en'
 
 -- mod相关信息
-version = '1.0.0'
+version = '1.1.0'
 author = 'Icya'
 forumthread = ''
 api_version = 10
-priority = 0                                                   -- 加载优先级，越低加载越晚，默认为0
+priority = 0                                       -- 加载优先级，越低加载越晚，默认为0
 
-dst_compatible = true                                          -- 联机版适配性
-dont_starve_compatible = false                                 -- 单机版适配性
-reign_of_giants_compatible = false                             -- 单机版：巨人国适配性
+dst_compatible = true                              -- 联机版适配性
+dont_starve_compatible = false                     -- 单机版适配性
+reign_of_giants_compatible = false                 -- 单机版：巨人国适配性
 -- all_clients_require_mod = true     -- 服务端/所有端模组
-server_only_mod = true                                         -- 仅服务端模组
+server_only_mod = true                             -- 仅服务端模组
 -- client_only_mod = true -- 仅客户端模组
-server_filter_tags = { 'worldgen', 'environment', 'scenario' } -- 创意工坊模组分类标签
-icon_atlas = 'modicon.xml'                                     -- 图集
-icon = 'modicon.tex'                                           -- 图标
+server_filter_tags = { 'worldgen', 'environment' } -- 创意工坊模组分类标签
+icon_atlas = 'modicon.xml'                         -- 图集
+icon = 'modicon.tex'                               -- 图标
 
 -- 以下自动配置
 name = LANGS[cur].name
