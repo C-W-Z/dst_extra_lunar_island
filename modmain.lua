@@ -27,6 +27,7 @@ TUNING.EXTRA_CIRCLE_LUNAR.MOONROCK = GetModConfigData(modid .. '_moonrock')
 TUNING.EXTRA_CIRCLE_LUNAR.GOLDROCK = GetModConfigData(modid .. '_goldrock')
 TUNING.EXTRA_CIRCLE_LUNAR.ROCK = GetModConfigData(modid .. '_rock')
 TUNING.EXTRA_CIRCLE_LUNAR.CAVEROCK = GetModConfigData(modid .. '_caverock')
+TUNING.EXTRA_CIRCLE_LUNAR.SALADMANDER = GetModConfigData(modid .. '_saladmander')
 
 PrefabFiles = {
     "extra_circle_lunar/center_anchor",

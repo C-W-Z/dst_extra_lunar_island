@@ -42,7 +42,9 @@ local function generate_objects(tx, ty)
     local driftwood_pct = TUNING.EXTRA_CIRCLE_LUNAR.DRIFTWOOD
     if driftwood_pct and driftwood_pct > 0 then
         local count = math.floor(total_usable_tiles * (driftwood_pct / 100))
-        local wood_types = { "driftwood_small1", "driftwood_small2", "driftwood_tall" }
+        -- 大浮木生成機率更低
+        local wood_types = { "driftwood_small1", "driftwood_small2", "driftwood_small1", "driftwood_small2",
+            "driftwood_tall" }
         for i = 1, count do
             table.insert(spawn_pool, wood_types[math.random(#wood_types)])
         end
@@ -64,6 +66,7 @@ local function generate_objects(tx, ty)
     AddToPool("rock2", TUNING.EXTRA_CIRCLE_LUNAR.GOLDROCK)
     AddToPool("rock1", TUNING.EXTRA_CIRCLE_LUNAR.ROCK)
     AddToPool("cavein_boulder", TUNING.EXTRA_CIRCLE_LUNAR.CAVEROCK)
+    AddToPool("fruitdragon", TUNING.EXTRA_CIRCLE_LUNAR.SALADMANDER)
 
     -- 隨機打亂池子順序 (洗牌演算法)，確保各物件擁有平等的抽取機率
     for i = #spawn_pool, 2, -1 do
@@ -119,6 +122,41 @@ local function generate_objects(tx, ty)
     end
 end
 
+---@param x number 島嶼中心X座標（世界單位）
+---@param y number 島嶼中心Y座標（世界單位）
+---@param z number 島嶼中心Z座標（世界單位）
+local function generate_vines(x, y, z)
+    if TUNING.EXTRA_CIRCLE_LUNAR.OCEANVINE then
+        -- 生成苔癬藤條
+        -- 1格地皮的座標距離為4
+        local offset = 4 * TUNING.EXTRA_CIRCLE_LUNAR.OCEANVINE_DISTANCE
+
+        -- 定義上下左右四個位置的座標 (目標x, 目標z)
+        local spawn_points = {
+            cross = {
+                { x,          z - offset },     -- 上
+                { x,          z + offset },     -- 下
+                { x - offset, z },              -- 左
+                { x + offset, z },              -- 右
+            },
+            square = {
+                { x + offset, z - offset },     -- 右上
+                { x + offset, z + offset },     -- 右下
+                { x - offset, z - offset },     -- 左上
+                { x - offset, z + offset },     -- 左下
+            }
+        }
+
+        -- 迴圈遍歷四個位置並生成實體
+        for _, pos in ipairs(spawn_points[TUNING.EXTRA_CIRCLE_LUNAR.OCEANVINE]) do
+            local entity = SpawnPrefab("oceanvine")
+            if entity ~= nil then
+                entity.Transform:SetPosition(pos[1], 0, pos[2])
+            end
+        end
+    end
+end
+
 local function fn()
     local inst = CreateEntity()
     inst.entity:AddTransform()
@@ -148,36 +186,7 @@ local function fn()
             end
         end
 
-        if TUNING.EXTRA_CIRCLE_LUNAR.OCEANVINE then
-            -- 生成苔癬藤條
-            -- 1格地皮的座標距離為4
-            local offset = 4 * TUNING.EXTRA_CIRCLE_LUNAR.OCEANVINE_DISTANCE
-
-            -- 定義上下左右四個位置的座標 (目標x, 目標z)
-            local spawn_points = {
-                cross = {
-                    { x,          z - offset }, -- 上
-                    { x,          z + offset }, -- 下
-                    { x - offset, z },          -- 左
-                    { x + offset, z },          -- 右
-                },
-                square = {
-                    { x + offset, z - offset }, -- 右上
-                    { x + offset, z + offset }, -- 右下
-                    { x - offset, z - offset }, -- 左上
-                    { x - offset, z + offset }, -- 左下
-                }
-            }
-
-            -- 迴圈遍歷四個位置並生成實體
-            for _, pos in ipairs(spawn_points[TUNING.EXTRA_CIRCLE_LUNAR.OCEANVINE]) do
-                local entity = SpawnPrefab("oceanvine")
-                if entity ~= nil then
-                    entity.Transform:SetPosition(pos[1], 0, pos[2])
-                end
-            end
-        end
-
+        generate_vines(x, y ,z)
         generate_objects(tx, ty)
 
         inst:Remove()

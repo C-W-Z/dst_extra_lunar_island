@@ -27,6 +27,7 @@ TUNING.EXTRA_CIRCLE_LUNAR.MOONROCK = GetModConfigData(modid .. '_moonrock')
 TUNING.EXTRA_CIRCLE_LUNAR.GOLDROCK = GetModConfigData(modid .. '_goldrock')
 TUNING.EXTRA_CIRCLE_LUNAR.ROCK = GetModConfigData(modid .. '_rock')
 TUNING.EXTRA_CIRCLE_LUNAR.CAVEROCK = GetModConfigData(modid .. '_caverock')
+TUNING.EXTRA_CIRCLE_LUNAR.SALADMANDER = GetModConfigData(modid .. '_saladmander')
 
 require "map/terrain"
 require "map/ocean_gen"
@@ -40,6 +41,8 @@ local StaticLayout = require("map/static_layout")
 local function getLayout(size)
     if size == 19 then
         return "extra_circle_lunar/map/static_layouts/circle_lunar_19x19"
+    elseif size == 25 then
+        return "extra_circle_lunar/map/static_layouts/circle_lunar_25x25"
     elseif size == 33 then
         return "extra_circle_lunar/map/static_layouts/circle_lunar_33x33"
     end
