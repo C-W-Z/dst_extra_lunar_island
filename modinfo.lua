@@ -12,7 +12,7 @@ local density_option_en = {
 local LANGS = {
     ['zh'] = {
         name = '额外圆形月岛',
-        description = 'v2.0更新注意事项\n\n本次更新将每种自然资源设定从最大数量改为密度，请按重置按钮将数值重置回预设！\n\n详细功能请查看模组设置\n\n额外生成一个或多个圆形/方形月岛，不影响原本月岛，可作为基地使用（薇克巴顿最爱）。',
+        description = 'v2.0更新注意事项（重要）\n\n本次更新将每种自然资源设定从最大数量改为密度，请按重置按钮将数值重置回预设！\n\n----------\n\n详细功能请查看模组设置\n\n额外生成一个或多个圆形/方形月岛，不影响原本月岛，可作为基地使用（薇克巴顿最爱）。',
         config = {
             { modid .. '_num', '数量', '生成几个额外月岛', 1, {
                 { "1", 1, "额外生成一个月岛" }, { "2", 2, "额外生成两个月岛" }, { "3", 3, "额外生成三个月岛" },
@@ -75,7 +75,7 @@ local LANGS = {
     },
     ['en'] = {
         name = "Extra Circular Lunar Island",
-        description = 'v2.0 Update Notes\n\nThis update changes the setting for each natural resource from maximum quantity to density. Please press the Reset button to reset the values back to the default!\n\nFor detailed features, please check the mod settings.\n\nGenerates one or more extra circular/square Lunar Islands without affecting the original one. Perfect for a base (Wickerbottom\'s favorite).',
+        description = 'v2.0 Update Notes (IMPORTANT)\n\nThis update changes the setting for each natural resource from maximum quantity to density. Please press the Reset button to reset the values back to the default!\n\n----------\n\nFor detailed features, please check the mod settings.\n\nGenerates one or more extra circular/square Lunar Islands without affecting the original one. Perfect for a base (Wickerbottom\'s favorite).',
         config = {
             { modid .. '_num', 'Amount', 'How many extra Lunar Islands to generate', 1, {
                 { "1", 1, "Generate 1 extra Lunar Island" }, { "2", 2, "Generate 2 extra Lunar Islands" }, { "3", 3, "Generate 3 extra Lunar Islands" },
