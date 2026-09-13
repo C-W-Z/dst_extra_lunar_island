@@ -11,11 +11,11 @@
 
 [h2]核心功能[/h2]
 [list]
-[*] 形状与大小：支援「圆形」与「方形」两种形状，并提供 19x19 与 33x33 两种尺寸选择。可选择是否将外围两圈替换为岩石海滩地皮
+[*] 形状与大小：支援「圆形」与「方形」两种形状，并提供 19x19、25x25、33x33 多种尺寸选择。可选择是否将外围两圈替换为岩石海滩地皮
 [*] 中心区域自定义：可将岛屿中心设置为实地（方便放置冰眼结晶器），或是挖空成 1x1 到 5x5 的内海
-[*] 特定中心实体：支援在岛屿正中心直接生成特定实体，包含：温泉、绿洲湖泊、原生水中木（大树干）或移植的水中木（高出平均值的树干）
+[*] 特定中心实体：支援在岛屿正中心直接生成特定实体，包含：温泉、绿洲湖泊、月台、原生水中木（大树干）或移植的水中木（高出平均值的树干）
 [*] 无花果藤条配置：若在中心生成了水中木，可额外配置苔藓藤条的生成位置（上下左右十字，或四角方位）与距离，轻松打造完美的海上树荫基地
-[*] 自然资源生成：可自由调整额外月岛上的自然资源数量。支援自定义生成的物件包含：海星、公牛海带根、海骨、浮木、月树、树苗、石果灌木丛、月光玻璃矿、月岩、金矿、岩石和落石
+[*] 自然资源生成：可自由调整额外月岛上的自然资源数量。支援自定义生成的物件包含：海星、公牛海带根、海骨、浮木、月树、树苗、石果灌木丛、月光玻璃矿、月岩、金矿、岩石、落石和沙拉蝾螈
 [/list]
 
 [h2]注意事项[/h2]
@@ -27,8 +27,8 @@
 [h2]未来计划[/h2]
 [list]
 [*] 更多大小尺寸选择
-[*] 中心实体选项新增：绚丽之门、非自然传送门、月台、岩浆池、风滚草生成点、整洁洞穴、远古小合奏机、远古伪科学站、被堵住的洞穴
-[*] 自然生成选项新增：芦苇、猴尾草、香蕉丛、棕梠树、沙拉蝾螈、破碎蜘蛛洞、食人花、月亮蘑菇树、萤光花、球状光虫巢穴版萤光花
+[*] 中心实体选项新增：绚丽之门、非自然传送门、岩浆池、风滚草生成点、整洁洞穴、远古小合奏机、远古伪科学站、被堵住的洞穴
+[*] 自然生成选项新增：芦苇、猴尾草、香蕉丛、棕梠树、破碎蜘蛛洞、食人花、月亮蘑菇树、萤光花、球状光虫巢穴版萤光花
 [/list]
 
 [h2]如果你喜欢我的模组，请点赞并收藏！[/h2]
@@ -47,11 +47,11 @@ Want to build a base on the Lunar Island, but find the original shape unappealin
 
 [h2]Core Features[/h2]
 [list]
-[*] Shape & Size: Supports both "Circular" and "Square" shapes, with 19x19 and 33x33 tile size options. You can optionally replace the outer 2 rings with Shell Beach turf.
+[*] Shape & Size: Supports both "Circular" and "Square" shapes, with 19x19, 25x25, and 33x33 tile size options. You can optionally replace the outer 2 rings with Shell Beach turf.
 [*] Center Customization: Keep the center as solid ground (great for placing an Ice Crystaleyezer) or hollow it out into a lake ranging from 1x1 up to 5x5.
-[*] Specific Center Entities: Instantly spawn a specific entity right in the middle of the island. Options include: Hot Spring, Oasis Lake, Native Knobbly Tree (Great Tree Trunk), or Transplanted Knobbly Tree (Above-Average Tree Trunk).
+[*] Specific Center Entities: Instantly spawn a specific entity right in the middle of the island. Options include: Hot Spring, Oasis Lake, Moon Stone, Native Knobbly Tree (Great Tree Trunk), or Transplanted Knobbly Tree (Above-Average Tree Trunk).
 [*] Mossy Vine Configuration: If you choose to spawn a Knobbly Tree in the center, you can customize the amount and position (Cross or Square patterns) and distance of extra Mossy Vines to effortlessly create the perfect shelter shade for your sea base.
-[*] Natural Resource Generation: Fully customize the amount of natural resources spawned on your extra islands. Supported objects include: Starfish, Bull Kelp Roots, Sea Bones, Driftwood, Lune Trees, Saplings, Stone Fruit Bushes, Moonglass Rocks, Moon Rocks, Gold Veins, Rocks, and Cave-in Boulders.
+[*] Natural Resource Generation: Fully customize the amount of natural resources spawned on your extra islands. Supported objects include: Starfish, Bull Kelp Roots, Sea Bones, Driftwood, Lune Trees, Saplings, Stone Fruit Bushes, Moonglass Rocks, Moon Rocks, Gold Veins, Rocks, Cave-in Boulders, and Saladmanders.
 [/list]
 
 [h2]Notes[/h2]
@@ -63,8 +63,8 @@ Want to build a base on the Lunar Island, but find the original shape unappealin
 [h2]Future Plans[/h2]
 [list]
 [*] More size options.
-[*] New center entity options: Florid Postern, Unnatural Portal, Moon Stone, Magma Pool, Tumbleweed Spawner, Tidy Hidey-Hole, Ancient Orchestrina, Ancient Pseudoscience Station, Plugged Sinkhole.
-[*] New natural generation options: Reeds, Monkeytails, Banana Bushes, Palmcone Trees, Saladmanders, Shattered Spider Holes, Lureplants, Lunar Mushtree, Light Flowers, and Light Flowers (Bulbous Lightbug den variant).
+[*] New center entity options: Florid Postern, Unnatural Portal, Magma Pool, Tumbleweed Spawner, Tidy Hidey-Hole, Ancient Orchestrina, Ancient Pseudoscience Station, Plugged Sinkhole.
+[*] New natural generation options: Reeds, Monkeytails, Banana Bushes, Palmcone Trees, Shattered Spider Holes, Lureplants, Lunar Mushtree, Light Flowers, and Light Flowers (Bulbous Lightbug den variant).
 [/list]
 
 [h2]If you like my mod, please thumbs up and favorite![/h2]
