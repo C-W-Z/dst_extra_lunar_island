@@ -67,6 +67,7 @@ local function generate_objects(tx, ty)
     AddToPool("rock1", TUNING.EXTRA_CIRCLE_LUNAR.ROCK)
     AddToPool("cavein_boulder", TUNING.EXTRA_CIRCLE_LUNAR.CAVEROCK)
     AddToPool("fruitdragon", TUNING.EXTRA_CIRCLE_LUNAR.SALADMANDER)
+    AddToPool("mushtree_moon", TUNING.EXTRA_CIRCLE_LUNAR.LUNARMUSHTREE)
 
     -- 隨機打亂池子順序 (洗牌演算法)，確保各物件擁有平等的抽取機率
     for i = #spawn_pool, 2, -1 do
