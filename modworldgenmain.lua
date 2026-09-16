@@ -7,6 +7,7 @@ local modid = 'extra_circle_lunar' -- 定义唯一modid
 modimport('scripts/' .. modid .. '/tuning.lua')
 
 TUNING.EXTRA_CIRCLE_LUNAR.NUM = GetModConfigData(modid .. '_num')
+TUNING.EXTRA_CIRCLE_LUNAR.TYPE = GetModConfigData(modid .. '_type')
 TUNING.EXTRA_CIRCLE_LUNAR.SHAPE = GetModConfigData(modid .. '_shape')
 TUNING.EXTRA_CIRCLE_LUNAR.SIZE = GetModConfigData(modid .. '_size')
 TUNING.EXTRA_CIRCLE_LUNAR.BEACH = GetModConfigData(modid .. '_beach')
@@ -111,17 +112,32 @@ if layout_data and layout_data.layers and layout_data.layers[1] then
     end
 end
 
--- 註冊圓形月島靜態佈局
-Layouts["Custom_Circular_Moon"] = StaticLayout.Get(layoutfile,
-    {
-        add_topology = {
-            room_id = "CustomCircularMoon:Main",
-            tags = { "RoadPoison", "moonhunt", "nohasslers", "lunacyarea", "not_mainland" }
-        },
-        min_dist_from_land = 5
-    })
+-- 獲取玩家設定的生成數量 (確保至少為 1)
+local num_islands = TUNING.EXTRA_CIRCLE_LUNAR.NUM or 1
 
--- 將圓形月島加入海洋預填佈景中
+-- 註冊多個具有唯一ID的靜態佈局
+for i = 1, num_islands do
+    local layout_id = "Custom_Circular_Moon_" .. i
+    local room_id_name = "CustomCircularMoon:Main_" .. i
+
+    local topology_tags = { "RoadPoison", "moonhunt", "nohasslers", "not_mainland" }
+
+    -- 如果是啟蒙月島，加上 lunacyarea 標籤
+    if TUNING.EXTRA_CIRCLE_LUNAR.TYPE == "lunar" then
+        table.insert(topology_tags, "lunacyarea")
+    end
+
+    Layouts[layout_id] = StaticLayout.Get(layoutfile,
+        {
+            add_topology = {
+                room_id = room_id_name,
+                tags = topology_tags
+            },
+            min_dist_from_land = 5 -- 跟官方設定一樣(map/ocean_gen_config.lua)
+        })
+end
+
+-- 將這些島加入海洋預填佈景中
 AddTaskSetPreInitAny(function(tasksetdata)
     if tasksetdata.location ~= "forest" then
         return
@@ -131,11 +147,19 @@ AddTaskSetPreInitAny(function(tasksetdata)
         tasksetdata.ocean_prefill_setpieces = {}
     end
 
-    tasksetdata.ocean_prefill_setpieces["Custom_Circular_Moon"] = { count = TUNING.EXTRA_CIRCLE_LUNAR.NUM }
+    -- 每個佈局的 count 都是 1，透過迴圈加入所有島嶼
+    for i = 1, num_islands do
+        local layout_id = "Custom_Circular_Moon_" .. i
+        tasksetdata.ocean_prefill_setpieces[layout_id] = { count = 1 }
+    end
 end)
 
--- 確保世界生成時強制包含此佈景
+-- 確保世界生成時強制包含這些佈景
 AddLevelPreInit("forest", function(level)
     level.required_setpieces = level.required_setpieces or {}
-    table.insert(level.required_setpieces, "Custom_Circular_Moon")
+
+    for i = 1, num_islands do
+        local layout_id = "Custom_Circular_Moon_" .. i
+        table.insert(level.required_setpieces, layout_id)
+    end
 end)

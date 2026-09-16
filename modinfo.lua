@@ -18,6 +18,9 @@ local LANGS = {
             { modid .. '_num', '数量', '生成几个额外月岛', 1, {
                 { "1", 1, "额外生成一个月岛" }, { "2", 2, "额外生成两个月岛" }, { "3", 3, "额外生成三个月岛" },
             } },
+            { modid .. '_type', '类型', '', 'lunar', {
+                { "月岛", 'lunar', "标准的月岛" }, { "非启蒙的月岛", 'unlunar', "月岛地形但不是启蒙区域" },
+            } },
             { modid .. '_shape', '形状', '', 'circle', {
                 { "圆形", 'circle', "额外生成圆形月岛" }, { "方形", 'square', "额外生成方形月岛" },
             } },
@@ -84,6 +87,9 @@ local LANGS = {
         config = {
             { modid .. '_num', 'Amount', 'How many extra Lunar Islands to generate', 1, {
                 { "1", 1, "Generate 1 extra Lunar Island" }, { "2", 2, "Generate 2 extra Lunar Islands" }, { "3", 3, "Generate 3 extra Lunar Islands" },
+            } },
+            { modid .. '_type', 'Type', '', 'lunar', {
+                { "Lunar Island", 'lunar', "Standard Lunar Island" }, { "Unenlightened Lunar Island", 'unlunar', "Lunar island terrain, but not an enlightenment area" },
             } },
             { modid .. '_shape', 'Shape', '', 'circle', {
                 { "Circle", 'circle', "Generate a circular Lunar Island" }, { "Square", 'square', "Generate a square Lunar Island" },
@@ -157,7 +163,7 @@ local LANGS = {
 local cur = (locale == 'zh' or locale == 'zhr' or locale == 'zht') and 'zh' or 'en'
 
 -- mod相关信息
-version = '2.1.0'
+version = '2.2.0'
 author = 'Icya'
 forumthread = ''
 api_version = 10
