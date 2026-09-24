@@ -33,7 +33,7 @@
 [*] 用指令手动生成额外岛屿
 [/list]
 
-[url=https://steamcommunity.com/sharedfiles/filedetails/?id=3800243544]GitHub Repo Here[/url]
+[url=https://github.com/C-W-Z/dst_extra_lunar_island]GitHub Repo Here[/url]
 
 # Extra Circular Lunar Island 额外圆形月岛
 
@@ -70,4 +70,4 @@ Want to build a base on the Lunar Island, but find the original shape unappealin
 [*] A command to manually generate an additional island.
 [/list]
 
-[url=https://steamcommunity.com/sharedfiles/filedetails/?id=3800243544]GitHub Repo Here[/url]
+[url=https://github.com/C-W-Z/dst_extra_lunar_island]GitHub Repo Here[/url]
